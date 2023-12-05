@@ -9,7 +9,8 @@ public class AnimateAction : CustomAction
     string triggerName;
     public override bool ActionEnded()
     {
-        return duration - Time.deltaTime <= 0;
+        duration -= Time.deltaTime;
+        return duration <= 0;
     }
 
     public override void StartAction()
